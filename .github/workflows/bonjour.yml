@@ -5,9 +5,10 @@ jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
       - run: ls -l
-      - run: sudo apt-get update && sudo apt-get install cowsay
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 23
       - run: npm clean-install
-      - run: npm run lint && npm start
-      - run: cat README.md | cowsay
+      - run: npm run lint
