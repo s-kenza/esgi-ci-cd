@@ -7,5 +7,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ls -l
-      - run: sudo apt-get update && sudo apt-get install cosway
-      - run: cat README.md | cosway
+      - run: sudo apt-get update && sudo apt-get install cowsay
+      - run: cat README.md | cowsay
