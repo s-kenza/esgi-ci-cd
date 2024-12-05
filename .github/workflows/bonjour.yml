@@ -7,7 +7,6 @@ jobs:
     env:
       IMAGE_NAME: "mynode"
     steps:
-      - run: ls -l
       - uses: actions/checkout@v4
       - run: docker image build --tag="${IMAGE_NAME}" ./
       - run: docker container run "${IMAGE_NAME}" npm run lint
